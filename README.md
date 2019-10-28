@@ -7,8 +7,16 @@
 
 
 ```
+objdump
+IDA PRO
+
 Angr
 Z3
+```
+
+```
+c中不安全的函式
+https://www.itread01.com/content/1548839885.html
 ```
 # 各種程式語言的保護與逆向破解
 ```
@@ -25,6 +33,9 @@ code obsufucation(代碼混淆)與 deobfuscation
 ### Packing(加核) 與unpacking(脫核) 
 ```
 https://github.com/upx/upx
+
+UPX原始碼分析——加殼篇
+https://www.itread01.com/content/1548839730.html
 ```
 ### code obsufucation(代碼混淆)與 deobfuscation
 ```

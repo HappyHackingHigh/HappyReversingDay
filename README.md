@@ -18,9 +18,13 @@ Rust
 ```
 ## 程式保護與破解
 ```
-Packing 與unpacking
-code obsufucation(代碼混淆)
+Packing(加核) 與unpacking(脫核) 
+code obsufucation(代碼混淆)與 deobfuscation
 
+```
+### Packing(加核) 與unpacking(脫核) 
+```
+https://github.com/upx/upx
 ```
 ### code obsufucation(代碼混淆)與 deobfuscation
 ```

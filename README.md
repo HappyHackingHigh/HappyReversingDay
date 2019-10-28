@@ -16,18 +16,26 @@ Python
 Java
 Rust
 ```
-## 程式保護
+## 程式保護與破解
 ```
 Packing 與unpacking
 code obsufucation(代碼混淆)
 
 ```
-### code obsufucation(代碼混淆)
+### code obsufucation(代碼混淆)與 deobfuscation
 ```
 JavaScript Obfuscator Tool
 https://obfuscator.io/
 ```
+```
 
+https://javascriptobfuscator.com/Javascript-Obfuscator.aspx
+```
+```
+Lets break modern binary code obfuscation
+A semantics based approach
+https://media.ccc.de/v/34c3-8789-lets_break_modern_binary_code_obfuscation
+```
 ### 國際C語言代碼混淆程式碼大賽IOCCC
 ```
 https://en.wikipedia.org/wiki/International_Obfuscated_C_Code_Contest

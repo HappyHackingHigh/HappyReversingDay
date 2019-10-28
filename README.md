@@ -38,6 +38,22 @@ UPX原始碼分析——加殼篇
 https://www.itread01.com/content/1548839730.html
 ```
 ### code obsufucation(代碼混淆)與 deobfuscation
+
+
+C/C++ Obfuscator(程式混淆器)
+```
+Stunnix C/C++ Obfuscator
+http://stunnix.com/prod/cxxo/  
+```
+```
+StarForce C++ Obfuscator
+http://www.star-force.com/products/starforce-obfuscator/
+```
+```
+ Crypto Obfuscator
+ https://www.ssware.com/articles/protect-and-obfuscate-your-dotnet-code-against-reverse-engineering-using-crypto-obfuscator.htm
+```
+JavaScript Obfuscator
 ```
 JavaScript Obfuscator Tool
 https://obfuscator.io/

@@ -1,6 +1,6 @@
 # HappyReversingDay 逆向工程的第一門課
 
-# If you can’t explain something in simple terms, you don’t understand it
+## If you can’t explain something in simple terms, you don’t understand it
 ```
 
 ```

@@ -11,9 +11,6 @@ https://www.nasm.us/
 
 下載:https://www.nasm.us/pub/nasm/releasebuilds/?C=M;O=D
 ```
-# 使用nasm開發Windows 32位元組合程式(Assembly code)
-
-# 使用nasm開發Windows 64位元組合程式(Assembly code)
 
 # 使用nasm開發Linux Assembly Language
 ```
@@ -140,5 +137,85 @@ x86_64 Linux Assembly #1 - "Hello, World!"
 https://www.youtube.com/watch?v=VQAKkuLL31g
 
 
+
+```
+# 使用nasm開發Windows 32位元組合程式(Assembly code)
+
+# 使用nasm開發Windows 64位元組合程式(Assembly code)
+```
+; ----------------------------------------------------------------------------------------
+; This is a Win64 console program that writes "Hello" on one line and then exits.  It
+; uses puts from the C library.  To assemble and run:
+;
+;     nasm -fwin64 hello.asm && gcc hello.obj && a
+; ----------------------------------------------------------------------------------------
+
+        global  main
+        extern  puts
+        section .text
+main:
+        sub     rsp, 28h                        ; Reserve the shadow space
+        mov     rcx, message                    ; First argument is address of message
+        call    puts                            ; puts(message)
+        add     rsp, 28h                        ; Remove shadow space
+        ret
+message:
+        db      'Hello', 0                      ; C strings need a zero byte at the end
+```
+
+# NASM @Mac
+```
+NASM Hello World for x86 and x86_64 Intel Mac OS X (get yourself an updated nasm with brew)
+```
+```
+; /usr/local/bin/nasm -f macho 32.asm && ld -macosx_version_min 10.7.0 -o 32 32.o && ./32
+
+global start
+
+section .text
+start:
+    push    dword msg.len
+    push    dword msg
+    push    dword 1
+    mov     eax, 4
+    sub     esp, 4
+    int     0x80
+    add     esp, 16
+
+    push    dword 0
+    mov     eax, 1
+    sub     esp, 12
+    int     0x80
+
+section .data
+
+msg:    db      "Hello, world!", 10
+.len:   equ     $ - msg
+```
+```
+;64.asm
+; /usr/local/bin/nasm -f macho64 64.asm && ld -macosx_version_min 10.7.0 -lSystem -o 64 64.o && ./64
+
+global start
+
+
+section .text
+
+start:
+    mov     rax, 0x2000004 ; write
+    mov     rdi, 1 ; stdout
+    mov     rsi, msg
+    mov     rdx, msg.len
+    syscall
+
+    mov     rax, 0x2000001 ; exit
+    mov     rdi, 0
+    syscall
+
+
+section .data
+
+msg:    db      "Hello, world!", 10
+.len:   equ     $ - msg
 
 ```

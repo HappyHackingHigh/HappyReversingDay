@@ -2,6 +2,7 @@
 ```
 gdb
 objdump
+readelf
 strace
 ltrace
 

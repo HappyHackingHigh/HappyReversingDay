@@ -60,7 +60,7 @@ sudo apt-get install nasm
 ```
 nasm -f elf32 example.asm -o example.o
 
-ls -m elf_i386 example.o -o example
+ld -m elf_i386 example.o -o example
 
 ./example
 ```

@@ -99,6 +99,55 @@ print:
 format:
         db  "%20ld", 10, 0
 ```
+
+
+### C + NASM
+```
+; ----------------------------------------------------------------------------
+; An implementation of the recursive function:
+;
+;   uint64_t factorial(uint64_t n) {
+;       return (n <= 1) ? 1 : n * factorial(n-1);
+;   }
+; ----------------------------------------------------------------------------
+
+        global  factorial
+
+        section .text
+factorial:
+        cmp     rdi, 1                  ; n <= 1?
+        jnbe    L1                      ; if not, go do a recursive call
+        mov     rax, 1                  ; otherwise return 1
+        ret
+L1:
+        push    rdi                     ; save n on stack (also aligns %rsp!)
+        dec     rdi                     ; n-1
+        call    factorial               ; factorial(n-1), result goes in %rax
+        pop     rdi                     ; restore n
+        imul    rax, rdi                ; n * factorial(n-1), stored in %rax
+        ret
+```
+
+```
+/*
+ * An application that illustrates calling the factorial function defined elsewhere.
+ */
+
+#include <stdio.h>
+#include <inttypes.h>
+
+uint64_t factorial(uint64_t n);
+
+int main() {
+    for (uint64_t i = 0; i < 20; i++) {
+        printf("factorial(%2lu) = %lu\n", i, factorial(i));
+    }
+    return 0;
+}
+```
+```
+nasm -felf64 factorial.asm && gcc -std=c99 factorial.o callfactorial.c && ./a.out
+```
 #### Intro to x86 Assembly Language[32位元組合程式]
 ```
 https://www.youtube.com/watch?v=wLXIWKUWpSs&list=PLmxT2pVYo5LB5EzTPZGfFN0c2GDiSXgQe

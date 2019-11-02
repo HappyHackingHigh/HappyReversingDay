@@ -1,3 +1,21 @@
+# 使用範例1
+test.c
+```
+#include <stdio.h>
+
+int x = 5;
+
+int main()
+{
+   printf("Hello CTFer\n ”);
+   return 0;
+}
+```
+```
+$ gcc -g test.c -o test
+```
+
+
 # 你一定要先會的指令
 ```
 gdb
